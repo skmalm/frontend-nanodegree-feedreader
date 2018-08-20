@@ -28,7 +28,7 @@ $(function() {
          expect(allFeeds[i].url).toBeDefined();
          expect(allFeeds[i].url.length).not.toBe(0);
        }
-     })
+     });
 
 
     /* This test loops through each feed
@@ -40,7 +40,7 @@ $(function() {
          expect(allFeeds[i].name).toBeDefined();
          expect(allFeeds[i].name.length).not.toBe(0);
        }
-     })
+     });
   });
 
 
