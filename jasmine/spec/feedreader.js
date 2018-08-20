@@ -52,11 +52,20 @@ $(function() {
      it('is hidden by default', function() {
        expect($('body').hasClass('menu-hidden')).toBe(true);
      });
-     /* TODO: Write a test that ensures the menu changes
+
+     /* This test ensures the menu changes
       * visibility when the menu icon is clicked. This test
-      * should have two expectations: does the menu display when
+      * has two expectations: does the menu display when
       * clicked and does it hide when clicked again.
       */
+      it('visibility toggles when clicked', function() {
+        // click the menu icon to show the menu
+        $('.menu-icon-link').trigger('click');
+        expect($('body').hasClass('menu-hidden')).toBe(false);
+        // click the menu icon once more to hide the menu
+        $('.menu-icon-link').trigger('click');
+        expect($('body').hasClass('menu-hidden')).toBe(true);
+      })
 
   /* TODO: Write a new test suite named "Initial Entries" */
 
