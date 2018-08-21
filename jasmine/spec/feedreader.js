@@ -65,11 +65,10 @@ $(function() {
   });
 
   describe('Initial Entries', function() {
-    /* This test ensures when the loadFeed
+    /* This test suite ensures when the loadFeed
      * function is called and completes its work, there is at least
      * a single .entry element within the .feed container.
      */
-
      beforeEach(function(done) {
        loadFeed(0, function() {
          done();
@@ -83,7 +82,7 @@ $(function() {
    });
 
   describe('New Feed Selection', function() {
-    /* This test ensures when a new feed is loaded
+    /* This test suite ensures when a new feed is loaded
      * by the loadFeed function that the content actually changes.
      * To do this, it loads feed 0, saves the first article title,
      * then loads feed 1 and saves that feeds first article title.
