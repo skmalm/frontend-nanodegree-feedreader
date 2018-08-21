@@ -83,9 +83,29 @@ $(function() {
    });
 
   describe('New Feed Selection', function() {
-    /* TODO: Write a test that ensures when a new feed is loaded
+    /* This test ensures when a new feed is loaded
      * by the loadFeed function that the content actually changes.
-     * Remember, loadFeed() is asynchronous.
+     * To do this, it loads feed 0, saves the first article title,
+     * then loads feed 1 and saves that feeds first article title.
+     * It then compares the titles to ensure that they don't match.
      */
+    let firstArticleTitle;
+    let secondArticleTitle;
+    beforeEach(function(done) {
+      loadFeed(0, function() {
+        firstArticleTitle = $('.entry').first()[0].innerText;
+        console.log(firstArticleTitle);
+      });
+      loadFeed(1, function() {
+        secondArticleTitle = $('.entry').first()[0].innerText;
+        console.log(secondArticleTitle);
+        done();
+      })
+    });
+
+     it('should change the displayed entry list', function(done) {
+       expect(firstArticleTitle === secondArticleTitle).toBe(false);
+       done();
+     });
   });
 }());
