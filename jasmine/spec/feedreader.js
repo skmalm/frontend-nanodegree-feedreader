@@ -88,18 +88,20 @@ $(function() {
      * then loads feed 1 and saves that feeds first article title.
      * It then compares the titles to ensure that they don't match.
      */
+
     let firstArticleTitle;
     let secondArticleTitle;
+
     beforeEach(function(done) {
       loadFeed(0, function() {
-        firstArticleTitle = $('.entry').first()[0].innerText;
+        firstArticleTitle = $('.feed .entry').first()[0].innerText;
         console.log(firstArticleTitle);
+        loadFeed(1, function() {
+          secondArticleTitle = $('.feed .entry').first()[0].innerText;
+          console.log(secondArticleTitle);
+          done();
+        });
       });
-      loadFeed(1, function() {
-        secondArticleTitle = $('.entry').first()[0].innerText;
-        console.log(secondArticleTitle);
-        done();
-      })
     });
 
      it('should change the displayed entry list', function(done) {
