@@ -76,7 +76,7 @@ $(function() {
      });
 
      it('should have at least one article', function(done) {
-       expect($('.entry').length).not.toBe(0);
+       expect($('.feed .entry').length).not.toBe(0);
        done();
      });
    });
