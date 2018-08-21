@@ -56,10 +56,10 @@ $(function() {
       */
       it('visibility toggles when clicked', function() {
         // click the menu icon to show the menu
-        $('.menu-icon-link').trigger('click');
+        $('.menu-icon-link').click();
         expect($('body').hasClass('menu-hidden')).toBe(false);
         // click the menu icon once more to hide the menu
-        $('.menu-icon-link').trigger('click');
+        $('.menu-icon-link').click();
         expect($('body').hasClass('menu-hidden')).toBe(true);
       });
   });
